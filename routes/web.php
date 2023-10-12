@@ -67,6 +67,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard-users', [AdminController::class, 'dashboard_users']);
     Route::get('/dashboard-booking', [AdminController::class, 'dashboard_booking']);
     Route::get('/dashboard-images', [ImageController::class, 'index']);
+    Route::post('/upload-images', [ImageController::class, 'uploadImages']);
     Route::Post('/user-search', [SearchController::class, 'user_search']);
     Route::Post('/menu-search', [SearchController::class, 'menu_search']);
     Route::delete('/delete-users/{user_id}', [AuthController::class, 'delete_users']);

@@ -15,24 +15,6 @@ class ImageController extends Controller
         return view('admin.upload_images');
     }
 
-    // public function store(Request $request)
-    // {
-    //     $id=time();
-
-    // Validate the uploaded file
-    //     $validate = Validator::make($request->all(), [
-    //         'file' => 'required|file|mimes:jpeg,png,pdf|max:2048', // Example validation rules
-    //     ]);
-
-
-    //     if ($validate->fails()) {
-    //         return response('hi');
-    //     }
-
-
-    //     $file = $request->file('file');
-    //     $file_id = $this->upload_img($file, "food", $id, 'food');
-    // }
     public function uploadImages(Request $request)
     {
         $id = time();
@@ -49,7 +31,7 @@ class ImageController extends Controller
                 // You can save $path to the database or perform other actions as needed.
             }
 
-            return redirect()->url('/dashboard-images')->with('success', 'Images uploaded successfully');
+            return redirect()->back()->with('success', 'Images uploaded successfully');
         }
 
         return back()->withErrors(['error' => 'No images selected']);

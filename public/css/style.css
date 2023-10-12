@@ -152,7 +152,7 @@
 
 /*** Hero Header ***/
 .hero-header {
-    background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(../img/bg-hero.jpg);
+    background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(../images/website/bg-hero.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -237,7 +237,7 @@
     position: relative;
     height: 100%;
     min-height: 500px;
-    background: linear-gradient(rgba(15, 23, 43, .1), rgba(15, 23, 43, .1)), url(../img/video.jpg);
+    background: linear-gradient(rgba(15, 23, 43, .1), rgba(15, 23, 43, .1)), url(../images/website/video.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -603,7 +603,7 @@ td {
     font-weight: bold;
 }
 
-.omages input[type="file"] {
+.images input[type="file"] {
     display: block;
     width: 100%;
     padding: 8px;
@@ -612,7 +612,7 @@ td {
     border-radius: 4px;
 }
 
-.omages button {
+.images button {
     background-color: #007bff;
     color: #fff;
     padding: 10px 15px;
@@ -622,16 +622,16 @@ td {
     font-size: 16px;
 }
 
-.omages button:hover {
+.images button:hover {
     background-color: #0056b3;
 }
 
-.omages .success-message {
+.images .success-message {
     color: #28a745;
     font-weight: bold;
 }
 
-.omages .error-message {
+.images .error-message {
     color: #dc3545;
     font-weight: bold;
     margin-top: 10px;

@@ -13,6 +13,63 @@
 
 
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <style>
+        .images form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        .images label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .images input[type="file"] {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .images button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .images button:hover {
+            background-color: #0056b3;
+        }
+
+        .images .success-message {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .images .error-message {
+            color: #dc3545;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .images .success{
+            text-align: center;
+            align-items: center;
+            align-content: center;
+            font-size: 20px;
+            color: #28a745;
+            font-family: sans-serif;
+        }
+    </style>
 </head>
 
 <body class="sb-nav-fixed">
@@ -22,23 +79,23 @@
 
         <div id="layoutSidenav_content">
             <div class="images">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="{{ url('/upload-images') }}" method="post" enctype="multipart/form-data">
                     @csrf
-    
+                    @method('POST')
                     <div>
                         <label for="images">Select Images:</label>
-                        <input type="file" name="images[]"  multiple required>
+                        <input type="file" name="images[]" multiple required>
                     </div>
-    
+
                     <div>
                         <button type="submit">Upload Images</button>
                     </div>
                 </form>
-    
+
                 @if (session('success'))
-                    <div>{{ session('success') }}</div>
+                    <div class="success">{{ session('success') }}</div>
                 @endif
-    
+
                 @if ($errors->any())
                     <div>
                         <ul>
@@ -49,7 +106,7 @@
                     </div>
                 @endif
             </div>
-          
+
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
